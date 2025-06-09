@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  name: default/wyz
+  name: WYZ
   description: Team WYZ responsible for XYZ services
 spec:
   type: team
