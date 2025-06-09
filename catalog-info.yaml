@@ -7,7 +7,7 @@ metadata:
     backstage.io/techdocs-ref: dir:.    # Keep this if you're planning to use TechDocs
 spec:
   type: website
-  owner: user: default/InfraNest              # Matches a Backstage user entity
+  owner: "user: default/InfraNest"              # Matches a Backstage user entity
   lifecycle: production
 
 
