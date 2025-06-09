@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: Wyz
+  description: The infra business unit
+spec:
+  type: business-unit
+  profile:
+    displayName: Wyz-Infrastructure
+    email: wyztechnologies@gmail.com
+  parent: ops
+  children: [backstage, other]
+  members: []

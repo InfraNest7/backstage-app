@@ -54,10 +54,7 @@ catalog:
       rules:
         - allow: [Template]
     #WYZ
-    - type: file
-      target: ./WYZ.yaml
-      rules:
-        - allow: [Components, API, System, Group]
+
     # Local example organizational data
     - type: file
       target: ./examples/org.yaml
