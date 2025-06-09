@@ -104,7 +104,7 @@ catalog:
     - type: file
       target: ./wyz.yaml
       rules:
-        -allow: [Component, System, Group, API]
+       - allow: [Component, System, Group, API]
     # Local example organizational data
     - type: file
       target: ./examples/org.yaml

@@ -10,7 +10,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  name: wyz-team
+  name: WYZ-team
   description: Team managing the WYZ system
 spec:
   type: team
