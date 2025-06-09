@@ -5,7 +5,7 @@ kind: System
 metadata:
   name: examples
 spec:
-  owner: user:InfraNest
+  owner: "user:InfraNest"
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
 apiVersion: backstage.io/v1alpha1
@@ -15,7 +15,7 @@ metadata:
 spec:
   type: website
   lifecycle: experimental
-  owner: user:InfraNest
+  owner: "user:InfraNest"
   system: examples
   providesApis: [example-grpc-api]
 ---
@@ -27,7 +27,7 @@ metadata:
 spec:
   type: grpc
   lifecycle: experimental
-  owner: user:default/InfraNest
+  owner: "user:default/InfraNest"
   system: examples
   definition: |
     syntax = "proto3";
