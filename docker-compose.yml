@@ -1,0 +1,57 @@
+
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - backstage-net
+
+  backstage:
+    build:
+      context: .
+      dockerfile: packages/backend/Dockerfile
+    container_name: backstage_backend
+    environment:
+      NODE_ENV: production
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      AUTH_GOOGLE_CLIENT_ID: ${AUTH_GOOGLE_CLIENT_ID}
+      AUTH_GOOGLE_CLIENT_SECRET: ${AUTH_GOOGLE_CLIENT_SECRET}
+    depends_on:
+      - postgres
+    ports:
+      - "7007:7007"
+    networks:
+      - backstage-net
+    # command removed - use CMD from Dockerfile
+
+
+  tailscale:
+    image: tailscale/tailscale
+    container_name: tailscale
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    network_mode: host
+    environment:
+      TS_AUTHKEY: ${TAILSCALE_AUTH_KEY}
+    volumes:
+      - tailscale-var-lib:/var/lib/tailscale
+      - /dev/net/tun:/dev/net/tun
+
+volumes:
+  pgdata:
+  tailscale-var-lib:
+
+networks:
+  backstage-net:
+

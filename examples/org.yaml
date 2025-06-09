@@ -1,0 +1,15 @@
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-user
+# examples/org.yaml
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: InfraNest
+  annotations:
+    backstage.io/email: infranest7@gmail.com
+spec:
+  profile:
+    displayName: InfraNest
+    email: infranest7@gmail.com
+  memberOf: [team-a]
+
