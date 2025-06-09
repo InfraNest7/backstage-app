@@ -1,14 +1,13 @@
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  name: wyz
+  name: default/wyz
   description: Team WYZ responsible for XYZ services
 spec:
   type: team
   profile:
     displayName: Team WYZ
     email: wyztechnologies@gmail.com
-    picture: https://example.com/path-to-team-logo.png
   children: []  # You can add sub-teams here
   members:      # Add users here
     - Nithin SK
