@@ -1,13 +1,24 @@
 apiVersion: backstage.io/v1alpha1
-kind: Group
+kind: System
 metadata:
   name: Wyz
-  description: The infra business unit
+  description: WYZ project system managing all WYZ components and services
 spec:
-  type: business-unit
+  owner: team:default/wyz-team  # assign owner group
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: wyz-team
+  description: Team managing the WYZ system
+spec:
+  type: team
   profile:
-    displayName: Wyz-Infrastructure
+    displayName: WYZ Team
     email: wyztechnologies@gmail.com
-  parent: ops
-  children: [backstage, other]
-  members: []
+  members:
+    - Nithin SK
+    - ravish0007_nh
+    - Elizabeth
+    - Druva S
